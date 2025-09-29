@@ -1,0 +1,121 @@
+--- FILE: user.html (baru — halaman pegawai)
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User - Buku Agenda Kunjungan</title>
+  <link rel="stylesheet" href="gaya.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .page { display: none; padding: 20px; }
+    .page.active { display: block; }
+    .cards { display: flex; gap: 15px; margin-bottom: 20px; }
+    .cards .card { flex: 1; padding: 15px; background: #f4f4f4; border-radius: 10px; text-align: center; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    canvas { background: #fff; border-radius: 10px; padding: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><h2>Agenda</h2></div>
+    <nav>
+      <ul>
+        <li><a href="#" data-page="dashboard">Dashboard</a></li>
+        <li><a href="#" data-page="data-kunjungan">Data Kunjungan</a></li>
+        <li><a href="#" data-page="pengaturan">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <button class="toggle-btn" id="toggle-btn">☰</button>
+      <div class="logo-wrap">
+        <img src="logo bappeda.png" alt="Logo Bappeda Lampung">
+        <div class="judul">
+          <h1>Agenda Kunjungan Tamu</h1>
+          <p>Halaman Pegawai</p>
+        </div>
+      </div>
+    </div>
+    <div class="aksi-header">
+      <button id="tombol-tambah" class="btn hijau">+ Tambah Data</button>
+      <button id="tombol-cetak" class="btn biru">🖨 Cetak / Simpan</button>
+    </div>
+  </header>
+
+  <!-- Konten Multi Page -->
+  <main>
+    <!-- === DASHBOARD === -->
+    <section id="dashboard" class="page active">
+      <h2>Dashboard</h2>
+      <div class="cards">
+        <div class="card">Jumlah Kunjungan: <span id="total-kunjungan">0</span></div>
+        <div class="card">Hari Ini: <span id="kunjungan-hariini">0</span></div>
+      </div>
+      <div class="dashboard-content">
+        <div id="chart-container">
+          <canvas id="chart-kunjungan"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- === ISI DATA KUNJUNGAN === -->
+    <section id="data-kunjungan" class="page">
+      <h2>Isi Data Kunjungan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>No SPT</th>
+            <th>Nama</th>
+            <th>Dinas</th>
+            <th>TTD</th>
+          </tr>
+        </thead>
+        <tbody id="isi-tabel"></tbody>
+      </table>
+    </section>
+
+    <!-- === PENGATURAN === -->
+    <section id="pengaturan" class="page">
+      <h2>Pengaturan</h2>
+      <div class="pengaturan-item">
+        <label><input type="checkbox" id="toggle-darkmode"> Dark Mode</label>
+      </div>
+      <div class="pengaturan-item">
+        <button id="logout-btn" class="btn merah">Logout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup Form untuk tambah data -->
+  <div id="popup-form" class="tersembunyi">
+    <div class="isi-popup">
+      <h2>Tambah Kunjungan</h2>
+      <form id="form-kunjungan">
+        <label>No Urut:<input type="text" id="no-urut" required></label>
+        <label>Tanggal Kunjungan:<input type="date" id="tanggal" required></label>
+        <label>No SPT / Perihal:<input type="text" id="no-spt" required></label>
+        <label>Nama:<input type="text" id="nama" required></label>
+        <label>Dinas:<input type="text" id="dinas" required></label>
+        <label>Tanda Tangan:</label>
+        <canvas id="canvas-ttd"></canvas>
+        <div class="popup-aksi">
+          <button type="button" class="hapus-ttd" id="hapus-ttd">🗑 Hapus Tanda Tangan</button>
+          <button type="submit" class="btn hijau">✔ Simpan</button>
+          <button type="button" id="tutup-popup" class="btn merah">✖ Batal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

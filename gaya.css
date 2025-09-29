@@ -1,0 +1,629 @@
+/* ==== Font & Reset ==== */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: url('images 2.jpg') no-repeat center center fixed; 
+  background-size: cover; 
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==== Tombol Pengaturan ==== */
+.btn-pengaturan {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #6c757d;
+}
+.btn-dark:hover {
+  background: #5a6268;
+}
+
+.btn-logout {
+  background: #dc3545;
+}
+.btn-logout:hover {
+  background: #c82333;
+}
+
+/* ==== Welcome Page (Index) ==== */
+body.welcome-page {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(29,53,87,0.85), rgba(69,123,157,0.85)), 
+    url("images.jpeg") repeat;
+  background-size: 120px;
+  color: white;
+  overflow: hidden;
+}
+
+.welcome-container {
+  text-align: center;
+  padding: 50px 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-container h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: slideDown 1s ease;
+}
+
+.welcome-container p {
+  margin-bottom: 25px;
+  font-size: 1.2em;
+  font-weight: 400;
+  animation: fadeIn 1.5s ease;
+}
+
+.btn-masuk {
+  background: #f1faee;
+  color: #1d3557;
+  padding: 14px 35px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  display: inline-block;
+}
+
+.btn-masuk:hover {
+  background: #a8dadc;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+/* Animasi Welcome Page */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==== Header ==== */
+header {
+  background: #1d3557;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header .logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header .logo-wrap img {
+  height: 45px;
+  width: auto;
+}
+
+header .judul h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+header .judul p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+
+/* ==== Tombol Header ==== */
+header .aksi-header {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.hijau { background: #2ecc71; }
+.btn.hijau:hover { background: #27ae60; }
+
+.btn.biru { background: #007bff; }
+.btn.biru:hover { background: #0056b3; }
+
+.btn.merah { background: #dc3545; }
+.btn.merah:hover { background: #c82333; }
+
+/* ==== Tombol sidebar (☰) ==== */
+header .toggle-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ==== Sidebar ==== */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #34495e;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+  z-index: 999;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.sidebar.active { left: 0; }
+
+.sidebar-header {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li { margin: 10px 0; }
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.sidebar nav ul li a:hover {
+  background: #1abc9c;
+  padding-left: 30px;
+}
+
+/* ==== Card & Dashboard ==== */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeIn 0.5s ease-in-out;
+  flex: 1;
+  min-width: 200px;
+}
+
+#chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+
+#chart-kunjungan {
+  max-width: 450px;
+  max-height: 450px;
+}
+
+/* ==== Table ==== */
+main {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background: #1d3557;
+  color: white;
+  font-weight: 600;
+}
+
+tbody tr:hover { background: #f1f3f6; }
+
+.hapus-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hapus-btn:hover {
+  background: #c0392b;
+}
+
+/* ==== Popup Form ==== */
+#popup-form {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+#popup-form .isi-popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 360px;
+  max-width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#popup-form h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #1d3557;
+  font-weight: 700;
+}
+
+#popup-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+#popup-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+
+#popup-form canvas {
+  width: 100%;
+  height: 130px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+/* Tombol dalam popup */
+#popup-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#popup-form .hapus-ttd { background: #6c757d; color: #fff; }
+#popup-form .hapus-ttd:hover { background: #5a6268; }
+
+#popup-form button[type="submit"] { background: #28a745; color: #fff; }
+#popup-form button[type="submit"]:hover { background: #218838; }
+
+#popup-form #tutup-popup { background: #dc3545; color: #fff; }
+#popup-form #tutup-popup:hover { background: #c82333; }
+
+.popup-aksi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#popup-laporan {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#popup-laporan.tersembunyi { display: none; }
+#popup-laporan .isi-popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+/* ==== Animasi Global ==== */
+@keyframes fadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ==== Dark Mode ==== */
+body.dark-mode {
+  background: #222;
+  color: #eee;
+}
+
+body.dark-mode header { background: #111; }
+body.dark-mode .sidebar { background: #222; }
+body.dark-mode .card { background: #333; color: #eee; }
+body.dark-mode table { background: #333; color: #eee; }
+body.dark-mode th { background: #000; }
+
+/* ==== Responsif ==== */
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; }
+  .aksi-header { margin-top: 8px; }
+  .sidebar { width: 200px; }
+}
+
+/* ==== Print Mode ==== */
+@media print {
+  #export-word,
+  #export-laporan,
+  .aksi-header,
+  .btn,
+  .toggle-btn {
+    display: none !important;
+  }
+
+  header, .sidebar { display: none !important; }
+
+  main { margin: 0; padding: 0; }
+
+  table { border: 1px solid #000; }
+
+  th, td {
+    border: 1px solid #000;
+    color: #000;
+  }
+}
+/* ==== Tombol Export ==== */
+#export-word {
+  background-color: #2a9d8f; /* biru tua */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#export-word:hover {
+  background-color: #21867a; /* biru muda saat hover */
+}
+
+#export-csv {
+  background-color: #2a9d8f; /* hijau tosca */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#export-csv:hover {
+  background-color: #21867a; /* hijau gelap saat hover */
+}
+
+
+/* ==== Register Page ==== */
+body.register-page {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(29,53,87,0.85), rgba(69,123,157,0.85)), url("images.jpeg") repeat;
+  background-size: 120px;
+  color: white;
+}
+
+.register-box {
+  background: rgba(255,255,255,0.15);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  width: 350px;
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.register-box input,
+.register-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background: #f1faee;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-box button:hover { background: #a8dadc; }
+
+.register-box a {
+  color: #f1faee;
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9em;
+}
+
+.register-box .error {
+  color: #ff6b6b;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.register-box .success {
+  color: #a8dadc;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* ==== Login Page ==== */
+body.login-page {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(29,53,87,0.85), rgba(69,123,157,0.85)), url("images.jpeg") repeat;
+  background-size: 120px;
+  color: white;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.15);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  width: 320px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #f1faee;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover { background: #a8dadc; }
+
+.login-box .error {
+  color: #ff6b6b;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* ==== Samakan ukuran Input & Tombol Login/Register ==== */
+.login-box input,
+.login-box button,
+.register-box input,
+.register-box select,
+.register-box button {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
